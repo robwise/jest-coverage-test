@@ -1,0 +1,41 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+       "targets": {
+         "browsers": [
+           ">1%",
+           "last 4 versions",
+           "Firefox ESR",
+           "not ie < 9"
+         ]
+       },
+       "modules": false
+      }
+    ],
+    "react"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "env",
+        "react"
+      ],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "flow-react-proptypes",
+        [
+        "module-resolver",
+          {
+            "extensions": [".js", ".jsx"],
+            "root": [
+              "./src",
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}

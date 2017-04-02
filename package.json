@@ -1,0 +1,32 @@
+{
+  "name": "jest-coverage-test",
+  "version": "0.0.1",
+  "description": "testing Jest coverage of various ES6 code in CodeCov",
+  "repository": "https://github.com/robwise/jest-coverage-test.git",
+  "author": "Rob Wise <robert.wise@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-flow-react-proptypes": "^0.21.0",
+    "babel-plugin-module-resolver": "^2.7.0",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.3.2",
+    "babel-preset-react": "^6.23.0",
+    "codecov": "^2.1.0",
+    "flow-bin": "^0.42.0",
+    "jest": "^19.0.2",
+    "lodash": "^4.17.4"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "ci": "yarn run test; codecov",
+    "coverage": "codecov -p .. -F frontend"
+  },
+  "jest": {
+    "resetModules": true,
+    "resetMocks": true,
+    "collectCoverageFrom": [
+      "src/**.js"
+    ]
+  }
+}
